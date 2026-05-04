@@ -1,15 +1,21 @@
 #include <stdio.h>
+#include <math.h> // Required for sqrt() [cite: 414]
 
 int main(void) {
-    float mph, kmh;
-    const float CONVERSION_FACTOR = 1.60934; 
+    float height, length, hypotenuse, perimeter, area;
 
-    printf("Enter speed in mph: ");
-    scanf("%f", &mph);
+    printf("Enter height and length of the triangle: ");
+    scanf("%f %f", &height, &length);
 
-    kmh = mph * CONVERSION_FACTOR;
+    // Calculate hypotenuse
+    hypotenuse = sqrt((height * height) + (length * length));
 
-    printf("Speed in km/h is: %.2f\n", kmh);
+    perimeter = height + length + hypotenuse;
+    area = 0.5 * height * length;
+
+    printf("Hypotenuse: %.2f\n", hypotenuse);
+    printf("Perimeter: %.2f\n", perimeter);
+    printf("Area: %.2f\n", area);
 
     return 0;
 }
