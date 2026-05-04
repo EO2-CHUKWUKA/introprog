@@ -1,21 +1,32 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main(void) {
-    int a, b, c, d, temp;
+    int secret, guess;
+    srand(time(NULL)); // Seed random number
+    secret = rand() % 100 + 1; // here we collect from 1 to 100
 
-    printf("Enter 4 numbers: ");
-    scanf("%d %d %d %d", &a, &b, &c, &d);
+    printf("Guess 1: ");
+    scanf("%d", &guess);
 
-    // Simple sorting logic using the Bubble sort style without loops
-    if (a > b) { temp = a; a = b; b = temp; }
-    if (a > c) { temp = a; a = c; c = temp; }
-    if (a > d) { temp = a; a = d; d = temp; }
-    if (b > c) { temp = b; b = c; c = temp; }
-    if (b > d) { temp = b; b = d; d = temp; }
-    if (c > d) { temp = c; c = d; d = temp; }
+    if (guess == secret) {
+        printf("Correct!\n");
+    } else {
+        if (guess < secret) printf("Too low. "); else printf("Too high. ");
+        printf("Guess 2: ");
+        scanf("%d", &guess);
 
-    printf("Ascending: %d, %d, %d, %d\n", a, b, c, d);
-    printf("Descending: %d, %d, %d, %d\n", d, c, b, a);
+        if (guess == secret) {
+            printf("Correct!\n");
+        } else {
+            if (guess < secret) printf("Too low. "); else printf("Too high. ");
+            printf("Guess 3 (Final): ");
+            scanf("%d", &guess);
 
+            if (guess == secret) printf("Correct!\n");
+            else printf("Game over. The number was %d\n", secret);
+        }
+    }
     return 0;
 }
