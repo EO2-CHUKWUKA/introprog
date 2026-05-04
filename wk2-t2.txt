@@ -1,0 +1,17 @@
+include <stdio.h>
+
+int main(void) {
+    int number, firstDigit, secondDigit, reversedNumber;
+
+    printf("Please enter number: ");
+    scanf("%d", &number);
+    firstDigit = number / 10;  // Gets the tens place
+    secondDigit = number % 10; // Gets the units place
+
+    // Recombine in reverse order [cite: 385]
+    reversedNumber = (secondDigit * 10) + firstDigit;
+
+    printf("Number reversed is: %d\n", reversedNumber);
+
+    return 0;
+}
