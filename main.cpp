@@ -1,17 +1,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int number, firstDigit, secondDigit, reversedNumber;
+    float mph, kmh;
+    const float CONVERSION_FACTOR = 1.60934; 
 
-    printf("Please enter number: ");
-    scanf("%d", &number);
-    firstDigit = number / 10;  // Gets the tens place
-    secondDigit = number % 10; // Gets the units place
+    printf("Enter speed in mph: ");
+    scanf("%f", &mph);
 
-    // Recombine in reverse order [cite: 385]
-    reversedNumber = (secondDigit * 10) + firstDigit;
+    kmh = mph * CONVERSION_FACTOR;
 
-    printf("Number reversed is: %d\n", reversedNumber);
+    printf("Speed in km/h is: %.2f\n", kmh);
 
     return 0;
 }
