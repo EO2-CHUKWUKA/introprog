@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void) {
+    float n1, n2, n3, n4, min;
+
+    printf("Enter 4 temperature readings: ");
+    scanf("%f %f %f %f", &n1, &n2, &n3, &n4);
+
+    // Comparing the first two
+    if (n1 < n2) min = n1;
+    else min = n2;
+
+    // Comparing current min with third reading
+    if (n3 < min) min = n3;
+
+    // Compare current min with fourth reading
+    if (n4 < min) min = n4;
+
+    printf("The minimum temperature is: %.2f\n", min);
+    return 0;
+}
