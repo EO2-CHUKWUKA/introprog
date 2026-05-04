@@ -1,25 +1,15 @@
 #include <stdio.h>
 
-int main() {
-    int num1, num2, sum;
+int main(void) {
+    // Declaring and initializing variables [cite: 368, 369, 370]
+    int sensorID = 99;
+    float temperature = 12.34;
+    char statusCode = 'A';
 
-    printf("Enter the first number: ");
-    scanf("%d", &num1);
-
-    printf("Enter the second number: ");
-    scanf("%d", &num2);
-
-    sum = num1 + num2;
-    printf("The sum is %d\n", sum);
-
-    // FIXED LOGIC:
-    if (sum > 0) {
-        printf("The sum is positive\n");
-    } else if (sum == 0) {
-        printf("The sum is zero\n");
-    } else {
-        printf("The sum is negative\n");
-    }
+    // Printing values with descriptive labels and correct format specifiers [cite: 371, 376]
+    printf("Sensor ID: %d\n", sensorID);
+    printf("Temperature: %.2f\n", temperature);
+    printf("Status Code: %c\n", statusCode);
 
     return 0;
 }
