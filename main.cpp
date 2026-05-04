@@ -1,28 +1,19 @@
 #include <stdio.h>
 
 int main(void) {
-    int grade, category;
+    double sensors[10];
+    const int SIZE = 10;
 
-    printf("Enter signal strength (0-100): ");
-    scanf("%d", &grade);
-
-    if (grade < 0 || grade > 100) {
-        printf("Error: Input outside 0-100\n");
-    } else {
-        category = grade / 10; // Integer division: 76/10 = 7 
-
-        printf("Category: ");
-        switch (category) {
-            case 10: // Handle 100
-            case 9:
-            case 8:  printf("A\n"); break;
-            case 7:
-            case 6:  printf("B\n"); break;
-            case 5:
-            case 4:  printf("C\n"); break;
-            case 3:  printf("D\n"); break;
-            default: printf("F\n"); break;
-        }
+    // Initialize all elements to -1.0 using a for loop
+    for (int i = 0; i < SIZE; i++) {
+        sensors[i] = -1.0;
     }
+
+    // Print all elements to verify
+    printf("Sensor Initialized Values:\n");
+    for (int i = 0; i < SIZE; i++) {
+        printf("Sensor %d: %.1f\n", i, sensors[i]);
+    }
+
     return 0;
 }
