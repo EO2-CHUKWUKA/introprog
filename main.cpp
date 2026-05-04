@@ -1,10 +1,17 @@
-/*
-EO2-CHUKWUKA
- */
 #include <stdio.h>
 
 int main(void) {
-    printf("Hello, World! My name is Emmanuella Chukwuka and my ID is 25049425.\n");
+    float mps, mph;
+    printf("Enter the speed in meters per second (m/s): ");
 
-    return 0; // Indicates the program finished successfully.
+    // %f is the format specifier for floats
+    scanf("%f", &mps);
+
+    //  Calculate the equivalent speed in mph
+    mph = mps * 2.23694;
+
+    // the final converted speed
+    printf("The speed in miles per hour is: %.2f mph\n", mph);
+
+    return 0;
 }
