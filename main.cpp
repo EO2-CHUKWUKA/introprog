@@ -1,15 +1,17 @@
 #include <stdio.h>
 
 int main(void) {
-    // Declaring and initializing variables [cite: 368, 369, 370]
-    int sensorID = 99;
-    float temperature = 12.34;
-    char statusCode = 'A';
+    int number, firstDigit, secondDigit, reversedNumber;
 
-    // Printing values with descriptive labels and correct format specifiers [cite: 371, 376]
-    printf("Sensor ID: %d\n", sensorID);
-    printf("Temperature: %.2f\n", temperature);
-    printf("Status Code: %c\n", statusCode);
+    printf("Please enter number: ");
+    scanf("%d", &number);
+    firstDigit = number / 10;  // Gets the tens place
+    secondDigit = number % 10; // Gets the units place
+
+    // Recombine in reverse order [cite: 385]
+    reversedNumber = (secondDigit * 10) + firstDigit;
+
+    printf("Number reversed is: %d\n", reversedNumber);
 
     return 0;
 }
