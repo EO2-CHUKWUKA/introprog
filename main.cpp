@@ -1,21 +1,21 @@
 #include <stdio.h>
-#include <math.h> // Required for sqrt() [cite: 414]
 
 int main(void) {
-    float height, length, hypotenuse, perimeter, area;
+    float n1, n2, n3, n4, min;
 
-    printf("Enter height and length of the triangle: ");
-    scanf("%f %f", &height, &length);
+    printf("Enter 4 temperature readings: ");
+    scanf("%f %f %f %f", &n1, &n2, &n3, &n4);
 
-    // Calculate hypotenuse
-    hypotenuse = sqrt((height * height) + (length * length));
+    // Comparing the first two
+    if (n1 < n2) min = n1;
+    else min = n2;
 
-    perimeter = height + length + hypotenuse;
-    area = 0.5 * height * length;
+    // Comparing current min with third reading
+    if (n3 < min) min = n3;
 
-    printf("Hypotenuse: %.2f\n", hypotenuse);
-    printf("Perimeter: %.2f\n", perimeter);
-    printf("Area: %.2f\n", area);
+    // Compare current min with fourth reading 
+    if (n4 < min) min = n4;
 
+    printf("The minimum temperature is: %.2f\n", min);
     return 0;
 }
