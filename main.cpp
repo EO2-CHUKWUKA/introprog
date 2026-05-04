@@ -1,31 +1,27 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 int main(void) {
-    int secret, guess;
-    srand(time(NULL)); // Seed random number
-    secret = rand() % 100 + 1; // here we collect from 1 to 100
+    int grade, category;
 
-    printf("Guess 1: ");
-    scanf("%d", &guess);
+    printf("Enter signal strength (0-100): ");
+    scanf("%d", &grade);
 
-    if (guess == secret) {
-        printf("Correct!\n");
+    if (grade < 0 || grade > 100) {
+        printf("Error: Input outside 0-100\n");
     } else {
-        if (guess < secret) printf("Too low. "); else printf("Too high. ");
-        printf("Guess 2: ");
-        scanf("%d", &guess);
+        category = grade / 10; // Integer division: 76/10 = 7 
 
-        if (guess == secret) {
-            printf("Correct!\n");
-        } else {
-            if (guess < secret) printf("Too low. "); else printf("Too high. ");
-            printf("Guess 3 (Final): ");
-            scanf("%d", &guess);
-
-            if (guess == secret) printf("Correct!\n");
-            else printf("Game over. The number was %d\n", secret);
+        printf("Category: ");
+        switch (category) {
+            case 10: // Handle 100
+            case 9:
+            case 8:  printf("A\n"); break;
+            case 7:
+            case 6:  printf("B\n"); break;
+            case 5:
+            case 4:  printf("C\n"); break;
+            case 3:  printf("D\n"); break;
+            default: printf("F\n"); break;
         }
     }
     return 0;
