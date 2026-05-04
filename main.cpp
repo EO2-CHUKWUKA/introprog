@@ -1,17 +1,25 @@
 #include <stdio.h>
 
-int main(void) {
-    float mps, mph;
-    printf("Enter the speed in meters per second (m/s): ");
+int main() {
+    int num1, num2, sum;
 
-    // %f is the format specifier for floats
-    scanf("%f", &mps);
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
 
-    //  Calculate the equivalent speed in mph
-    mph = mps * 2.23694;
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
 
-    // the final converted speed
-    printf("The speed in miles per hour is: %.2f mph\n", mph);
+    sum = num1 + num2;
+    printf("The sum is %d\n", sum);
+
+    // FIXED LOGIC:
+    if (sum > 0) {
+        printf("The sum is positive\n");
+    } else if (sum == 0) {
+        printf("The sum is zero\n");
+    } else {
+        printf("The sum is negative\n");
+    }
 
     return 0;
 }
