@@ -1,21 +1,21 @@
 #include <stdio.h>
 
 int main(void) {
-    float n1, n2, n3, n4, min;
+    int a, b, c, d, temp;
 
-    printf("Enter 4 temperature readings: ");
-    scanf("%f %f %f %f", &n1, &n2, &n3, &n4);
+    printf("Enter 4 numbers: ");
+    scanf("%d %d %d %d", &a, &b, &c, &d);
 
-    // Comparing the first two
-    if (n1 < n2) min = n1;
-    else min = n2;
+    // Simple sorting logic using the Bubble sort style without loops
+    if (a > b) { temp = a; a = b; b = temp; }
+    if (a > c) { temp = a; a = c; c = temp; }
+    if (a > d) { temp = a; a = d; d = temp; }
+    if (b > c) { temp = b; b = c; c = temp; }
+    if (b > d) { temp = b; b = d; d = temp; }
+    if (c > d) { temp = c; c = d; d = temp; }
 
-    // Comparing current min with third reading
-    if (n3 < min) min = n3;
+    printf("Ascending: %d, %d, %d, %d\n", a, b, c, d);
+    printf("Descending: %d, %d, %d, %d\n", d, c, b, a);
 
-    // Compare current min with fourth reading 
-    if (n4 < min) min = n4;
-
-    printf("The minimum temperature is: %.2f\n", min);
     return 0;
 }
